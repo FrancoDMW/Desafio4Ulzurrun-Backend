@@ -98,15 +98,5 @@
     "stock": 10,
     "id": "ac5e36fa-f99f-4cc5-9933-06d000409848",
     "status": true
-  },
-  {
-    "title": "Dragon Ball 11",
-    "description": "Manga de Accion",
-    "price": 1800,
-    "thumbnail": "Sin imagen",
-    "code": "q1w2e3",
-    "stock": 10,
-    "id": "1264e059-ab3c-49a2-985d-3423db00ba5f",
-    "status": true
   }
 ]

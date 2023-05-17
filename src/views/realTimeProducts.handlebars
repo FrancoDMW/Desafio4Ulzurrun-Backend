@@ -1,0 +1,73 @@
+<div>
+    <h1 class="title">Real Time Products</h1>
+</div>
+<div>
+    <div>
+        <h2 style="color:green;">Agregar Producto</h2>
+        <form action="/" method="post">
+            <div>
+                <div>
+                    <input type="text" class="form-control" name="title" placeholder="Title" required>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <input type="text" class="form-control" name="description" placeholder="Description" required>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <input type="number" class="form-control" name="price" placeholder="Price" required>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <input type="number" class="form-control" name="stock" placeholder="Stock" required>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <input type="text" class="form-control" name="code" placeholder="Code" required>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <input type="text" class="form-control" name="thumbnail" placeholder="Thumbnail">
+                </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-success">Agregar</button>
+        </form>
+    </div>
+    <div>
+        <h2 style="color:red;">Eliminar Producto</h2>
+        <form id="myForm" method="post" action="/">
+            <div>
+                <div>
+                    <input type="text" class="form-control" id="myInput" name="myInputField" placeholder="ID" required>
+                </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+        </form>
+    </div>
+</div>
+
+<div>
+    {{#each products}}
+    <div>
+        <div>
+            <p>*************************************************</p>
+            <h5>{{this.title}}</h5>
+            <p>Description: {{this.description}}</p>
+            <p>Price: $<strong>{{this.price}}</strong></p>
+            <p>ID: {{this.id}}</p>
+            <p>*************************************************</p>
+        </div>
+    </div>
+    {{/each}}
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>
+<script src="/js/input.js"></script>

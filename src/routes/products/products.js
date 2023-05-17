@@ -33,21 +33,29 @@ router.get('/', (req, res) => {
     let { limit } = req.query;
     let intLimit = parseInt(limit)
     if (!intLimit) {
-        res.send(products)
+        res.render('home',{
+            products:products,
+            title:'Products'
+        })
+        //res.send(products)
     }
     else {
         prod = []
         for (let i = 0; i < intLimit; i++) {
             prod.push(products[i])
         }
-        res.send(prod)
+        res.render('home',{
+            products:prod,
+            title:'Products'
+        })
+        //res.send(prod)
     }
 })
 router.post('/', (req, res) => {
     let data = req.body
     let product = new ProductManager("./src/routes/products/Products.json");
     let newProduct = product.addProduct(data)
-    res.send(data)
+    res.send('Producto agregado')
 
 })
 router.put('/:pId', (req, res) => {
